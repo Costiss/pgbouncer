@@ -27,9 +27,6 @@ The following environment variables are used to configure pgbouncer:
 To run the container, you can use the following command:
 
 ```bash
-https://github.com/Costiss/pgbouncer.git
-cd pgbouncer
-docker build -t pgbouncer .
 docker run -d \
   -e POSTGRESQL_HOST=postgres \
   -e POSTGRESQL_PORT_NUMBER=5432 \
@@ -37,5 +34,29 @@ docker run -d \
   -e POSTGRESQL_PASSWORD=postgres \
   -p 6432:6432 \
   --name pgbouncer \
-  pgbouncer
+  costiss/pgbouncer
+```
+
+or with docker compose
+
+```yaml
+services:
+  pgbouncer:
+    image: costiss/pgbouncer:latest
+    environment:
+      POSTGRESQL_HOST: db
+      POSTGRESQL_PORT_NUMBER: 5432
+      POSTGRESQL_USER: postgres
+      POSTGRESQL_PASSWORD: postgres
+    ports:
+      - 6432:6432
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
 ```
