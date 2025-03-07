@@ -1,7 +1,7 @@
 # PgBouncer Docker image
 
 This repository contains the code necessary for building a docker image for [pgbouncer](https://github.com/pgbouncer/pgbouncer).
-The image is based on the official pgbouncer image, but the configuration file is generated from environment variables.
+The image is based on the official pgbouncer code with the configuration file being generated from environment variables.
 
 ## Environment variables
 
