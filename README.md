@@ -9,6 +9,8 @@ The image is based on the official pgbouncer code with the configuration file be
 
 The following environment variables are used to configure pgbouncer:
 
+config reference: https://www.pgbouncer.org/config.html
+
 | Configuration Parameter | Environment Variable     | Default                             |
 | ----------------------- | ------------------------ | ----------------------------------- |
 | `logfile`               | `PGBOUNCER_LOGFILE`      | `/etc/pgbouncer/logs/pgbouncer.log` |
