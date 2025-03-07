@@ -1,5 +1,7 @@
 # PgBouncer Docker image
 
+⚠ currently, only one database are supported. If you need more, please open an issue. ⚠
+
 This repository contains the code necessary for building a docker image for [pgbouncer](https://github.com/pgbouncer/pgbouncer).
 The image is based on the official pgbouncer code with the configuration file being generated from environment variables.
 
@@ -7,20 +9,20 @@ The image is based on the official pgbouncer code with the configuration file be
 
 The following environment variables are used to configure pgbouncer:
 
-| Variable                 | Description                       | Default                             |
-| ------------------------ | --------------------------------- | ----------------------------------- |
-| `PGBOUNCER_LOGFILE`      | Path to the log file              | `/etc/pgbouncer/logs/pgbouncer.log` |
-| `PGBOUNCER_PIDFILE`      | Path to the pid file              | `/etc/pgbouncer/tmp/pgbouncer.pid`  |
-| `PGBOUNCER_LISTEN_ADDR`  | Address to listen on              | `0.0.0.0`                           |
-| `PGBOUNCER_PORT_NUMBER`  | Port to listen on                 | `6432`                              |
-| `PGBOUNCER_AUTH_FILE`    | Path to the userlist file         | `/etc/pgbouncer/conf/userlist.txt`  |
-| `PGBOUNCER_ADMIN_USERS`  | Users with admin privileges       | `postgres`                          |
-| `PGBOUNCER_POOL_MODE`    | Pooling mode                      | `session`                           |
-| `POSTGRESQL_DATABASE`    | Database to connect to            | `postgres`                          |
-| `POSTGRESQL_HOST`        | Hostname of the PostgreSQL server | `postgres`                          |
-| `POSTGRESQL_PORT_NUMBER` | Port of the PostgreSQL server     | `5432`                              |
-| `POSTGRESQL_USERNAME`    | Username to connect with          | `postgres`                          |
-| `POSTGRESQL_PASSWORD`    | Password to connect with          | `postgres`                          |
+| Configuration Parameter | Environment Variable     | Default                             |
+| ----------------------- | ------------------------ | ----------------------------------- |
+| `logfile`               | `PGBOUNCER_LOGFILE`      | `/etc/pgbouncer/logs/pgbouncer.log` |
+| `pidfile`               | `PGBOUNCER_PIDFILE`      | `/etc/pgbouncer/tmp/pgbouncer.pid`  |
+| `listen_addr`           | `PGBOUNCER_LISTEN_ADDR`  | `0.0.0.0`                           |
+| `listen_port`           | `PGBOUNCER_PORT_NUMBER`  | `6432`                              |
+| `auth_file`             | `PGBOUNCER_AUTH_FILE`    | `/etc/pgbouncer/conf/userlist.txt`  |
+| `admin_users`           | `PGBOUNCER_ADMIN_USERS`  | `postgres`                          |
+| `pool_mode`             | `PGBOUNCER_POOL_MODE`    | `session`                           |
+| N/A                     | `POSTGRESQL_DATABASE`    | `postgres`                          |
+| N/A                     | `POSTGRESQL_HOST`        | `postgres`                          |
+| N/A                     | `POSTGRESQL_PORT_NUMBER` | `5432`                              |
+| N/A                     | `POSTGRESQL_USERNAME`    | `postgres`                          |
+| N/A                     | `POSTGRESQL_PASSWORD`    | `postgres`                          |
 
 ## Usage
 
