@@ -1,0 +1,12 @@
+[pgbouncer]
+logfile = ${PGBOUNCER_LOGFILE}
+pidfile = ${PGBOUNCER_PIDFILE}
+listen_addr = ${PGBOUNCER_LISTEN_ADDR}
+listen_port = ${PGBOUNCER_PORT_NUMBER}
+auth_file = ${PGBOUNCER_AUTH_FILE}
+admin_users = ${PGBOUNCER_ADMIN_USERS}
+pool_mode = ${PGBOUNCER_POOL_MODE}
+
+[databases]
+${POSTGRESQL_DATABASE} = host=${POSTGRESQL_HOST} port=${POSTGRESQL_PORT_NUMBER} user=${POSTGRESQL_USERNAME} password=${POSTGRESQL_PASSWORD}
+
